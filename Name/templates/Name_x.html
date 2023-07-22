@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name Manager</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 50px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+        p {
+            color: green;
+            font-size: 16px;
+            font-weight: bold;
+        }        
+    </style>
+</head>
+<body>
+    <h1>Name Manager</h1>
+
+    <form method="POST" action="/">
+        <input type="text" name="name" placeholder="Enter a name" required>
+        <input type="submit" name="action" value="add">
+    </form>
+
+    <form method="POST" action="/">
+        <input type="text" name="name" placeholder="Enter a name" required>
+        <input type="submit" name="action" value="get">
+    </form>
+
+    {% if quit %}
+    <p>Connection closed.</p>
+    {% endif %}
+
+    {% if suggested_name %}
+        <h2>Name: {{ suggested_name }}</h2>
+    {% else %}
+        <p>The name is not exist.</p>
+    {% endif %}
+
+</body>
+</html>
